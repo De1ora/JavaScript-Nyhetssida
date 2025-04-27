@@ -1,0 +1,54 @@
+header {
+    width: 100%;
+    border-bottom: 3px solid #fc4903;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.1rem 2rem;
+}
+
+nav > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+    margin-left: 2rem;
+}
+
+.current-date {
+    margin-left: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    color: hsl(0, 0%, 20%);
+    font-weight: 500;
+}
+
+nav > div:last-child {
+    margin-right: 2rem;
+}
+
+.menu-logo {
+    display: flex;
+    align-items: center;
+}
+
+.menu-logo i {
+    font-size: 24px;
+    color: black;
+    cursor: pointer;
+}
+
+.menu-logo i:hover {
+    transform: scale(1.1);
+}

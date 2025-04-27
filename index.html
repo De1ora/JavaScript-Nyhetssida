@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="css/button.css" rel="stylesheet"/>
+    <link href="css/link.css" rel="stylesheet"/>
+    <link href="css/input.css" rel="stylesheet"/>
+    <link href="css/navbar.css" rel="stylesheet"/>
+    <link href="css/index.css" rel="stylesheet"/>
+    <link href="css/main.css" rel="stylesheet"/>
+    <link href="css/sidebar.css" rel="stylesheet"/>
+    <link href="css/breaking-news.css" rel="stylesheet"/>
+    <link href="css/tailwind-output.css" rel="stylesheet"/>
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <script src="javascript/date.js" defer></script>
+    <script src="javascript/sidebar.js" defer></script>
+
+</head>
+
+<body>
+    <div id="page-wrapper">
+        <header>
+            <nav>
+                <div>
+                    <a href="/">
+                        <img src="assets/NOWNEXT.png" alt="Site Logo" width="150px" />
+                    </a>
+                    <ul>
+                        <li>
+                            <a class="active-link" href="#">News</a>
+                        </li>
+                        <li>
+                            <a href="#">Local</a>
+                        </li>
+                        <li>
+                            <a href="#">World</a>
+                        </li>
+                        <li>
+                            <a href="#">Environment</a>
+                        </li>
+                        <li>
+                            <a href="#">Economy</a>
+                        </li>
+                        <li>
+                            <a href="#">Culture</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="input-field">
+                        <svg viewBox="64 64 896 896" focusable="false" data-icon="search" width="1em" height="1em"
+                            fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0011.6 0l43.6-43.5a8.2 8.2 0 000-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z">
+                            </path>
+                        </svg>
+                        <input placeholder="Search" />
+                    </div>
+                    <span id="currentDate" class="current-date"></span>
+                </div>
+                <div class="menu-logo">
+                    <i class='bx bx-menu'></i>
+                </div>
+
+                <aside class="sidebar">
+                    <div class="menu-logo">
+                        <i class='bx bx-menu'></i>
+                        <img src="assets/NOWNEXT.png" alt="Site Logo" width="150px" />
+                    </div>
+
+                    <div class="sidebar-content">
+                        <ul class="lists">
+                            <li class="list">
+                                <a href="#" class="nav-link">
+                                    <span class="link">News</span>
+                                </a>
+                            </li>
+                            <li class="list">
+                                <a href="#" class="nav-link">
+                                    <span class="link">Contact Us</span>
+                                </a>
+                            </li>
+                            <li class="list">
+                                <a href="#" class="nav-link">
+                                    <span class="link">Authors List</span>
+                                </a>
+                            </li>
+                            <li class="list">
+                                <a href="#" class="nav-link">
+                                    <span class="link">Terms & Conditions</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+            </nav>
+            <selection class="overlay"></selection>
+        </header>
+
+        <div class="breaking-news-container">
+            <div class="breaking-news-label">Right Now</div>
+            <div class="breaking-news-headline" id="breaking-news-headline">Growing and sharing plant-seeds can boost
+                mental health!</div>
+        </div>
+
+        <main>
+            <div class="cards-container container flex" id="cardscontainer">
+                <div class="card">
+                    <div class="card-header">
+                        <img src="assets/sierraleone.png" alt="article_img">
+                    </div>
+                    <div class="card-content">
+                        <h3 id="news-title">Leading with purpose: Shaping the future in Sierra Leone</h3>
+                        <h6 class="news-source" id="news-source">March 7, 2025</h6>
+                        <p class="news-description" id="news-description">Mabinty Thullay turned financial independence
+                            into a leadership role, becoming the first female teacher in her village school. Now, she’s
+                            inspiring other women to follow in her footsteps.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <img src="assets/forestimage.jpg" alt="article_img">
+                    </div>
+                    <div class="card-content">
+                        <h3 id="News-title">Young trees adapt to drought, offering hope for future forests</h3>
+                        <h6 class="news-source" id="news-source">March 31, 2025</h6>
+                        <p class="news-description" id="news-description">A Swiss research finds that young trees in dry
+                            conditions develop drought resistance, with twigs adapting faster than leaves. This
+                            resilience could help forests withstand climate change.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <img src="assets/youthclimatechampions.jpg" alt="article_img">
+                    </div>
+                    <div class="card-content">
+                        <h3 id="News-title">Ten youth climate champions to receive fundings</h3>
+                        <h6 class="news-source" id="news-source">March 26, 2025</h6>
+                        <p class="news-description" id="news-description">The Global Youth Climate Summit 2025 in Brazil
+                            will bring together young leaders to tackle climate challenges. Ten youth champions will
+                            receive funding to community projects, fostering climate action.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <img src="assets/liver.png" alt="article_img">
+                    </div>
+                    <div class="card-content">
+                        <h3 id="News-title">Researchers new discovery: rapid liver regeneration</h3>
+                        <h6 class="news-source" id="news-source">March 30, 2025</h6>
+                        <p class="news-description" id="news-description">Spanish researchers have identified a rapid
+                            liver repair mechanism activated within minutes of damage, offering hope for new treatments
+                            for severe liver conditions.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <img src="assets/oranguetangs.jpg" alt="article_img">
+                    </div>
+                    <div class="card-content">
+                        <h3 id="News-title">Three orangutans rescued from illegal captivity, finally returned</h3>
+                        <h6 class="news-source" id="news-source">March 27, 2025</h6>
+                        <p class="news-description" id="news-description">In a heartwarming milestone for great ape
+                            conservation, rescued orphaned oranguetangs has been released into the jungles of Borneo
+                            following rehabilitation.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <img src="assets/humpbackwhale2.jpg" alt="article_img">
+                    </div>
+                    <div class="card-content">
+                        <h3 id="News-title">Humpback whales are now singing more</h3>
+                        <h6 class="news-source" id="news-source">March 1, 2025</h6>
+                        <p class="news-description" id="news-description">The number of whale songs detected is
+                            associated with shifting food sources, according to the California scientists, the humpbacks
+                            singing has nearly doubled.</p>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h4>News</h4>
+                    <ul>
+                        <li><a href="#">Local</a></li>
+                        <li><a href="#">World</a></li>
+                        <li><a href="#">Environment</a></li>
+                        <li><a href="#">Economy</a></li>
+                        <li><a href="#">Culture</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Help & Support</h4>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Complaints & Corrections</a></li>
+                        <li><a href="#">Join Our Team</a></li>
+                        <li><a href="#">Advertise With Us</a></li>
+                        <li><a href="#">Authors List</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Privacy Settings</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <ul class="social-links">
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Now & Next News. All rights reserved.</p>
+                <p>Attendant online editor: Lisa Fälth | Email: now&next@gmail.com | Phone: 07-412 08 001</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
