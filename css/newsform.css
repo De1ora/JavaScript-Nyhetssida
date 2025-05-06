@@ -1,0 +1,58 @@
+.news-form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#newsForm .form-group {
+    margin-bottom: 20px;
+}
+
+#newsForm h2 {
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#newsForm label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#newsForm input[type="text"], 
+#newsForm textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#newsForm textarea {
+    height: 200px;
+    resize: vertical;
+}
+
+#newsForm .date-display {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+#newsForm button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#newsForm .char-counter {
+    color: #666;
+    font-size: 0.8em;
+    margin-top: 5px;
+}
