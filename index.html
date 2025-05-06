@@ -193,6 +193,36 @@
                 </div>
 
             </div>
+
+            <!-- <form id="article-form">
+                <input type="text" id="title" placeholder="Title" required />
+                <textarea name="Name" id="content" placeholder="Content" required></textarea>
+                <button type="submit">Create Article</button>
+            </form> -->
+
+            <form id="news-article-form">
+                <h2>Create Your News Article</h2>
+                <div class="form-group">
+                    <label>Title</label>
+                    <input id="title-input" type="text" required/>
+                </div>
+
+                <!-- Ett datum som sätts automatiskt baserat på vilket datum det är vid skrivande stund ... -->
+
+                <div class="form-group">
+                    <label>Content</label>
+                    <textarea id="content-input" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="image">Attach Image</label>
+                    <input type="file" id="image" name="image" accept="image/*">
+                    <div id="imagePreview"></div>
+                </div>
+
+                <button type="button" id="preview-btn">Preview Article</button>
+                <button type="submit">Submit Article</button>
+            </form>
         </main>
 
 
