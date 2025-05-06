@@ -47,6 +47,20 @@ function initializeNewsForm() {
             }
         });
     }
+
+    // Custom file input (since I am overwriting the default)
+const fileInput = document.getElementById('image');
+const fileNameDisplay = document.querySelector('.file-name');
+
+if (fileInput && fileNameDisplay) {
+    fileInput.addEventListener('change', function() {
+        if (this.files && this.files[0]) {
+            fileNameDisplay.textContent = this.files[0].name;
+        } else {
+            fileNameDisplay.textContent = 'No file chosen';
+        }
+    });
+}
 }
 
 // Event listener to initialize the form when the page loads

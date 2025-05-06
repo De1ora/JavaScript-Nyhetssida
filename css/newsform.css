@@ -56,3 +56,36 @@
     font-size: 0.8em;
     margin-top: 5px;
 }
+
+#newsForm .file-input-container {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+#newsForm .file-input-container input[type="file"] {
+    position: absolute;
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#newsForm .file-input-container .custom-file-button {
+    display: inline-block;
+    padding: 2px 10px;
+    background-color: hsl(0, 0%, 90%);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+#newsForm .file-input-container .file-name {
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+#newsForm .file-input-container .custom-file-button:hover {
+    background-color: hsl(0, 0%, 80%);
+}
