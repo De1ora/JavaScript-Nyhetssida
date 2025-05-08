@@ -50,7 +50,7 @@ document.getElementById('newsForm').addEventListener('submit', function (e) {
         existing.push(article);
         localStorage.setItem('articles', JSON.stringify(existing));
 
-        alert('Artikel sparad i localStorage!');
+        // alert('Artikel sparad i localStorage!');
         e.target.reset();
         document.getElementById('charCount').textContent = '0';
         document.querySelector('.file-name').textContent = 'No file chosen';

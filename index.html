@@ -18,12 +18,14 @@
     <link href="css/newsform.css" rel="stylesheet" />
     <link href="css/sidebar.css" rel="stylesheet" />
     <link href="css/tailwind-output.css" rel="stylesheet" />
+    <link href="css/toast.css" rel="stylesheet" />
 
     <script src="javascript/date.js" defer></script>
     <script src="javascript/newsform-submit.js" defer></script>
     <script src="javascript/newsform-ui.js" defer></script>
     <script src="javascript/sidebar.js" defer></script>
     <script src="javascript/storage.js" defer></script>
+    <script src="javascript/toast.js" defer></script>
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
@@ -236,6 +238,19 @@
 
                     <button type="submit">Submit Article</button>
                 </form>
+            </div>
+
+            <div class="toast">
+                <div class="toast-content">
+                    <i class='bx bx-check-circle'></i>
+
+                    <div class="message">
+                        <span class="text text-1">Success</span>
+                        <span class="text text-2">Your good-news article has been posted!</span>
+                    </div>
+                </div>
+                
+                <div class="progress"></div>
             </div>
         </main>
 
