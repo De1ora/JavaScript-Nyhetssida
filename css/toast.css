@@ -6,33 +6,13 @@
     border-radius: 12px;
     background: white;
     padding: 15px 30px 20px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    border-left: 6px solid #4bb543;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     overflow: hidden;
 }
 
 .toast .toast-content {
     display: flex;
     align-items: center;
-}
-
-.toast .progress {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 3px;
-    width: 100%;
-    background: white;
-}
-
-.toast .progress:before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    background-color: #4bb543;
 }
 
 .toast-content .bx-check-circle {
