@@ -9,18 +9,16 @@
     <!-- Browser tab icon -->
     <link rel="icon" href="assets/NOWNEXT.png" type="img" />
 
+    <link href="css/article.css" rel="stylesheet" />
     <link href="css/breaking-news.css" rel="stylesheet" />
-    <link href="css/index.css" rel="stylesheet" />
     <link href="css/input.css" rel="stylesheet" />
     <link href="css/link.css" rel="stylesheet" />
     <link href="css/main.css" rel="stylesheet" />
     <link href="css/navbar.css" rel="stylesheet" />
-    <link href="css/newsform.css" rel="stylesheet" />
     <link href="css/sidebar.css" rel="stylesheet" />
     <link href="css/tailwind-output.css" rel="stylesheet" />
-    <link href="css/toast.css" rel="stylesheet" />
 
-    <script src="javascript/pages/index.js" type="module"></script> <!-- Behöver inte länka varken article.js eller main.js eftersom de importeras! -->
+    <script src="javascript/pages/article.js" type="module"></script>
     <script src="javascript/navdate.js" defer></script>
     <script src="javascript/newsform-submit.js" defer></script>
     <script src="javascript/newsform-ui.js" defer></script>
@@ -114,64 +112,9 @@
             <selection class="overlay"></selection>
         </header>
 
-        <div class="breaking-news-container">
-            <div class="breaking-news-label">Right Now</div>
-            <div class="breaking-news-headline" id="breaking-news-headline">Create your own good-news article just
-                launched!</div>
-        </div>
-
         <main>
-            <div class="cards-container container flex" id="cardscontainer">
-                <!-- News articles will be dynamically loaded here -->
-            </div>
+            <section id="article-view"></section>
 
-            <div class="news-form-container">
-                <form id="newsForm">
-                    <h2>Create Your Good-News Article</h2>
-
-                    <div class="form-group">
-                        <label for="title-input">Title</label>
-                        <input id="title-input" type="text" required />
-                    </div>
-
-                    <div class="form-group">
-                        <div class="date-display">
-                            Date: <span id="articleDate"></span>
-                            <input type="hidden" id="dateInput" name="date">
-                            <!-- Since I have two Date elements, the ID must be unique. -->
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="content-input">Content</label>
-                        <textarea id="content-input" name="content" required></textarea>
-                        <div class="char-counter"><span id="charCount">0</span> characters</div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="image">Attach Image</label>
-                        <div class="file-input-container">
-                            <input type="file" id="image" name="image" accept="image/*">
-                            <label for="image" class="custom-file-button">Choose File</label>
-                            <span class="file-name">No file chosen</span>
-                        </div>
-                        <div id="imagePreview"></div>
-                    </div>
-
-                    <button type="submit">Submit Article</button>
-                </form>
-            </div>
-
-            <div class="toast">
-                <div class="toast-content">
-                    <i class='bx bx-check-circle'></i>
-
-                    <div class="message">
-                        <span class="text text-1">Success</span>
-                        <span class="text text-2">Your good-news article has been posted!</span>
-                    </div>
-                </div>
-            </div>
         </main>
 
         <footer>
