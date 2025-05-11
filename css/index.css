@@ -57,8 +57,7 @@ h6 {
 }
 
 .card-header {
-    width: 360px; /* Fixa så att bilderna är samma storlek & skuggan runt syns runt hela inlägget/cardet ... 
-    De åker just nu "ut" */
+    width: 360px;
 }
 
 .card:hover {

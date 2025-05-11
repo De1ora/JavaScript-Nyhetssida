@@ -20,8 +20,10 @@
     <link href="css/tailwind-output.css" rel="stylesheet" />
     <link href="css/toast.css" rel="stylesheet" />
 
-    <script src="javascript/newsform-submit.js" defer></script>
+    <script src="javascript/pages/index.js" type="module"></script>
+    <script src="javascript/main.js" type="module"></script>
     <script src="javascript/navdate.js" defer></script>
+    <script src="javascript/newsform-submit.js" defer></script>
     <script src="javascript/newsform-ui.js" defer></script>
     <script src="javascript/sidebar.js" defer></script>
     <script src="javascript/storage.js" defer></script>
@@ -118,89 +120,13 @@
 
         <div class="breaking-news-container">
             <div class="breaking-news-label">Right Now</div>
-            <div class="breaking-news-headline" id="breaking-news-headline">Growing and sharing plant-seeds can boost
-                mental health!</div>
+            <div class="breaking-news-headline" id="breaking-news-headline">Create your own good-news article just
+                launched!</div>
         </div>
 
         <main>
             <div class="cards-container container flex" id="cardscontainer">
-                <div class="card">
-                    <div class="card-header">
-                        <img src="assets/sierraleone.png" alt="article_img">
-                    </div>
-                    <div class="card-content">
-                        <h3 id="news-title">Leading with purpose: Shaping the future in Sierra Leone</h3>
-                        <h6 class="news-source" id="news-source">March 7, 2025</h6>
-                        <p class="news-description" id="news-description">Mabinty Thullay turned financial independence
-                            into a leadership role, becoming the first female teacher in her village school. Now, she’s
-                            inspiring other women to follow in her footsteps.</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <img src="assets/forestimage.jpg" alt="article_img">
-                    </div>
-                    <div class="card-content">
-                        <h3 id="News-title">Young trees adapt to drought, offering hope for future forests</h3>
-                        <h6 class="news-source" id="news-source">March 31, 2025</h6>
-                        <p class="news-description" id="news-description">A Swiss research finds that young trees in dry
-                            conditions develop drought resistance, with twigs adapting faster than leaves. This
-                            resilience could help forests withstand climate change.</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <img src="assets/youthclimatechampions.jpg" alt="article_img">
-                    </div>
-                    <div class="card-content">
-                        <h3 id="News-title">Ten youth climate champions to receive fundings</h3>
-                        <h6 class="news-source" id="news-source">March 26, 2025</h6>
-                        <p class="news-description" id="news-description">The Global Youth Climate Summit 2025 in Brazil
-                            will bring together young leaders to tackle climate challenges. Ten youth champions will
-                            receive funding to community projects, fostering climate action.</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <img src="assets/liver.png" alt="article_img">
-                    </div>
-                    <div class="card-content">
-                        <h3 id="News-title">Researchers new discovery: rapid liver regeneration</h3>
-                        <h6 class="news-source" id="news-source">March 30, 2025</h6>
-                        <p class="news-description" id="news-description">Spanish researchers have identified a rapid
-                            liver repair mechanism activated within minutes of damage, offering hope for new treatments
-                            for severe liver conditions.</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <img src="assets/oranguetangs.jpg" alt="article_img">
-                    </div>
-                    <div class="card-content">
-                        <h3 id="News-title">Three orangutans rescued from illegal captivity, finally returned</h3>
-                        <h6 class="news-source" id="news-source">March 27, 2025</h6>
-                        <p class="news-description" id="news-description">In a heartwarming milestone for great ape
-                            conservation, rescued orphaned oranguetangs has been released into the jungles of Borneo
-                            following rehabilitation.</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <img src="assets/humpbackwhale2.jpg" alt="article_img">
-                    </div>
-                    <div class="card-content">
-                        <h3 id="News-title">Humpback whales are now singing more</h3>
-                        <h6 class="news-source" id="news-source">March 1, 2025</h6>
-                        <p class="news-description" id="news-description">The number of whale songs detected is
-                            associated with shifting food sources, according to the California scientists, the humpbacks
-                            singing has nearly doubled.</p>
-                    </div>
-                </div>
+                <!-- News articles will be dynamically loaded here -->
             </div>
 
             <div class="news-form-container">
@@ -215,7 +141,8 @@
                     <div class="form-group">
                         <div class="date-display">
                             Date: <span id="articleDate"></span>
-                            <input type="hidden" id="dateInput" name="date"> <!-- Since I have two Date elements, the ID must be unique. -->
+                            <input type="hidden" id="dateInput" name="date">
+                            <!-- Since I have two Date elements, the ID must be unique. -->
                         </div>
                     </div>
 
@@ -248,11 +175,8 @@
                         <span class="text text-2">Your good-news article has been posted!</span>
                     </div>
                 </div>
-
-                <div class="progress"></div>
             </div>
         </main>
-
 
         <footer>
             <div class="footer-container">
