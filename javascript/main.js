@@ -29,59 +29,15 @@ export const newsArticles = [
         "assets/liver.png"
     ),
     new Article(
-        "Ten youth climate champions to receive fundings",
-        "March 26, 2025",
-        "The Global Youth Climate Summit 2025 in Brazil will bring together young leaders to tackle climate challenges. Ten youth champions will receive funding to community projects, fostering climate action.",
-        "assets/youthclimatechampions.jpg"
+        "Three orangutans rescued from illegal captivity, finally returned",
+        "March 27, 2025",
+        "In a heartwarming milestone for great ape conservation, rescued orphaned oranguetangs has been released into the jungles of Borneo following rehabilitation.",
+        "assets/oranguetangs.jpg"
     ),
     new Article(
-        "Ten youth climate champions to receive fundings",
-        "March 26, 2025",
-        "The Global Youth Climate Summit 2025 in Brazil will bring together young leaders to tackle climate challenges. Ten youth champions will receive funding to community projects, fostering climate action.",
-        "assets/youthclimatechampions.jpg"
+        "Humpback whales are now singing more",
+        "March 1, 2025",
+        "The number of whale songs detected is associated with shifting food sources, according to the California scientists, the humpbacks singing has nearly doubled.",
+        "assets/humpbackwhale2.jpg"
     )
 ];
-
-/* 
-
-                <div class="card">
-                    <div class="card-header">
-                        <img src="assets/liver.png" alt="article_img">
-                    </div>
-                    <div class="card-content">
-                        <h3 id="News-title">Researchers new discovery: rapid liver regeneration</h3>
-                        <h6 class="news-source" id="news-source">March 30, 2025</h6>
-                        <p class="news-description" id="news-description">Spanish researchers have identified a rapid
-                            liver repair mechanism activated within minutes of damage, offering hope for new treatments
-                            for severe liver conditions.</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <img src="assets/oranguetangs.jpg" alt="article_img">
-                    </div>
-                    <div class="card-content">
-                        <h3 id="News-title">Three orangutans rescued from illegal captivity, finally returned</h3>
-                        <h6 class="news-source" id="news-source">March 27, 2025</h6>
-                        <p class="news-description" id="news-description">In a heartwarming milestone for great ape
-                            conservation, rescued orphaned oranguetangs has been released into the jungles of Borneo
-                            following rehabilitation.</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <img src="assets/humpbackwhale2.jpg" alt="article_img">
-                    </div>
-                    <div class="card-content">
-                        <h3 id="News-title">Humpback whales are now singing more</h3>
-                        <h6 class="news-source" id="news-source">March 1, 2025</h6>
-                        <p class="news-description" id="news-description">The number of whale songs detected is
-                            associated with shifting food sources, according to the California scientists, the humpbacks
-                            singing has nearly doubled.</p>
-                    </div>
-                </div>
-            </div>
-*/
-
