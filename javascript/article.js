@@ -18,6 +18,7 @@ export class Article {
     // Detta ska visas på huvudsidan och även på produktsidan
     createCardElement() {
         // Skapa alla element som ska visas inom <article> produkten
+        let link = document.createElement("a");
         let card = document.createElement("div");
         let cardHeader = document.createElement("div");
         let cardContent = document.createElement("div");
@@ -25,6 +26,8 @@ export class Article {
         let title = document.createElement("h3");
         let date = document.createElement("h6");
         let description = document.createElement("p");
+
+        link.href = "/article.html";
 
         // Applicera på de element som behöver det
         card.classList.add("card");
@@ -49,8 +52,9 @@ export class Article {
         cardHeader.append(image);
         cardContent.append(title, date, description);
         card.append(cardHeader, cardContent);
+        link.append(card);
 
         // Retunera huvud-elementet (<article>)
-        return card;
+        return link;
     }
 }
