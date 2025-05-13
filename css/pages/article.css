@@ -1,0 +1,102 @@
+/* Import base styles from index.css if needed or include these common styles */
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif; /* Match your index font */
+}
+
+#page-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    min-height: 100vh;
+}
+
+main {
+    padding-block: 20px 60px;
+    margin-top: 20px;
+}
+
+.container {
+    max-width: 1180px;
+    margin-inline: auto;
+    overflow: hidden;
+}
+
+/* Article specific styles */
+.article-view-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 4px hsl(0, 0%, 70%);
+    border-radius: 4px;
+}
+
+.article-header {
+    margin-bottom: 20px;
+}
+
+.article-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.article-date {
+    font-size: 14px;
+    font-weight: 660;
+    color: hsl(0, 0%, 20%);
+    margin-bottom: 20px;
+}
+
+.feature-image-container {
+    width: 100%;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.feature-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.article-body {
+    margin-bottom: 30px;
+}
+
+.article-description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: hsl(0, 0%, 20%);
+}
+
+.back-button-container {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: hsl(0, 0%, 95%);
+    color: hsl(0, 0%, 20%);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 4px hsl(0, 0%, 80%);
+}
+
+.back-button:hover {
+    background-color: hsl(0, 0%, 90%);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px hsl(0, 0%, 70%);
+}

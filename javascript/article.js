@@ -27,7 +27,9 @@ export class Article {
         let date = document.createElement("h6");
         let description = document.createElement("p");
 
-        link.href = "/article.html";
+        // När vi trycker på produkten ska vi skickas till en separat artikel-sida!
+        // Vi skickar med information om vilken artikel det är genom id:t
+        link.href = "/article.html?articleId=" + this.id;
 
         // Applicera på de element som behöver det
         card.classList.add("card");
@@ -56,5 +58,66 @@ export class Article {
 
         // Retunera huvud-elementet (<article>)
         return link;
+    }
+
+    createViewElement() {
+        const container = document.createElement("div");
+        const articleHeader = document.createElement("div");
+        const articleContent = document.createElement("div");
+
+        container.classList.add("article-view-container");
+        articleHeader.classList.add("article-header");
+        articleContent.classList.add("article-content");
+
+        const title = document.createElement("h1");
+        const date = document.createElement("p");
+
+        title.textContent = this.title;
+        date.textContent = this.date;
+
+        title.classList.add("article-title");
+        date.classList.add("article-date");
+
+        articleHeader.append(title, date);
+
+        // Create and add feature image
+        const imageContainer = document.createElement("div");
+        const featureImage = document.createElement("img");
+
+        imageContainer.classList.add("feature-image-container");
+        featureImage.src = this.imageUrl;
+        featureImage.alt = "Feature image for " + this.title;
+        featureImage.classList.add("feature-image");
+
+        imageContainer.append(featureImage);
+
+        // Create article body text
+        const articleBody = document.createElement("div");
+        const articleDescription = document.createElement("p");
+
+        articleBody.classList.add("article-body");
+        articleDescription.classList.add("article-description");
+        articleDescription.textContent = this.description;
+
+        articleBody.append(articleDescription);
+
+        // Add image and body to the content section
+        articleContent.append(imageContainer, articleBody);
+
+        // Add "Back to news" button
+        const backButtonContainer = document.createElement("div");
+        const backButton = document.createElement("a");
+
+        backButtonContainer.classList.add("back-button-container");
+        backButton.href = "/index.html";
+        backButton.classList.add("back-button");
+        backButton.textContent = "Back to News";
+
+        backButtonContainer.append(backButton);
+
+        // Assemble all components
+        container.append(articleHeader, articleContent, backButtonContainer);
+
+        return container;
     }
 }
