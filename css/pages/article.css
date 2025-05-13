@@ -6,6 +6,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    background-color: white;
 }
 
 #page-wrapper {
@@ -76,7 +77,7 @@ main {
 }
 
 .back-button-container {
-    margin-top: 60px;
+    margin-top: 80px;
     text-align: center;
 }
 
