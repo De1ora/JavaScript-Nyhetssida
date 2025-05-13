@@ -1,4 +1,3 @@
-/* Import base styles from index.css if needed or include these common styles */
 html, body {
     height: 100%;
 }
@@ -6,46 +5,45 @@ html, body {
 body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif; /* Match your index font */
+    font-family: sans-serif;
 }
 
 #page-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: white;
     min-height: 100vh;
 }
 
 main {
     padding-block: 20px 60px;
     margin-top: 20px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-.container {
-    max-width: 1180px;
-    margin-inline: auto;
-    overflow: hidden;
+.article-view {
+    width: 100%;
+    padding: 0 20px;
 }
 
-/* Article specific styles */
 .article-view-container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 0 4px hsl(0, 0%, 70%);
-    border-radius: 4px;
+    padding: 20px 0;
 }
 
 .article-header {
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .article-title {
-    font-size: 32px;
+    font-size: 38px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    line-height: 1.2;
 }
 
 .article-date {
@@ -59,7 +57,6 @@ main {
     width: 100%;
     margin-bottom: 20px;
     overflow: hidden;
-    border-radius: 4px;
 }
 
 .feature-image {
@@ -69,7 +66,7 @@ main {
 }
 
 .article-body {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .article-description {
@@ -79,7 +76,7 @@ main {
 }
 
 .back-button-container {
-    margin-top: 40px;
+    margin-top: 60px;
     text-align: center;
 }
 
@@ -92,11 +89,9 @@ main {
     font-weight: bold;
     border-radius: 4px;
     transition: all 0.3s ease;
-    box-shadow: 0 0 4px hsl(0, 0%, 80%);
 }
 
 .back-button:hover {
     background-color: hsl(0, 0%, 90%);
-    transform: translateY(-2px);
-    box-shadow: 0 2px 8px hsl(0, 0%, 70%);
+    transform: translateY(-1px);
 }
