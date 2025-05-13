@@ -1,10 +1,8 @@
-// Innehåller Article klassens definition
+// Shows an article or shows an error.
+// Displays either the full article or an error message.
 
 let ARTICLE_ID_COUNTER = 0;
 
-// En klass-modell för alla produkter som visas på sidan
-// Den hjälper oss att förstå sturkturen på produkt-objekten
-// Vi bakar även in några användbara funktioner, som 'createCardElement'
 export class Article {
     constructor(title, date, description, imageUrl) {
         this.id = ARTICLE_ID_COUNTER++;
@@ -56,7 +54,6 @@ export class Article {
         card.append(cardHeader, cardContent);
         link.append(card);
 
-        // Retunera huvud-elementet (<article>)
         return link;
     }
 
@@ -80,7 +77,6 @@ export class Article {
 
         articleHeader.append(title, date);
 
-        // Create and add feature image
         const imageContainer = document.createElement("div");
         const featureImage = document.createElement("img");
 

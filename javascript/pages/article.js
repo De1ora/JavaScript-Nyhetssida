@@ -1,6 +1,8 @@
+// Defines what an article looks like.
+// Creates the article view with title, date, image & text.
+
 import { newsArticles } from "../main.js";
 
-// Nya (egna) sidan för en artikel
 const urlParams = new URLSearchParams(window.location.search);
 const articleIdParam = urlParams.get("articleId"); 
 const articleViewContainer = document.getElementById("article-view");
@@ -52,7 +54,6 @@ function setupArticlePage() {
 
         articleViewContainer.innerHTML = "";
         articleViewContainer.append(article.createViewElement());
-        articleViewContainer.append(createBackButton());
 
     } catch (error) {
         displayError(error.message);
