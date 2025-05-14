@@ -73,7 +73,8 @@ main {
 .article-description {
     font-size: 18px;
     line-height: 1.6;
-    color: hsl(0, 0%, 20%);
+    color: hsl(0, 0%, 15%);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .back-button-container {

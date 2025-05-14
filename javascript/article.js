@@ -12,6 +12,13 @@ export class Article {
         this.imageUrl = imageUrl;
     }
 
+    truncateText(text, maxLength) {
+        if (text.length <= maxLength) {
+            return text;
+        }
+        return text.substring(0, maxLength) + "...";
+    }
+
     // Vi skapar en <article> för produkten och retunerar elementet 
     // Detta ska visas på huvudsidan och även på produktsidan
     createCardElement() {
@@ -46,7 +53,8 @@ export class Article {
         image.alt = "article_img";
         title.textContent = this.title;
         date.textContent = this.date;
-        description.textContent = this.description;
+        // Truncate text description to 60 characters for card view
+        description.textContent = this.truncateText(this.description, 60);
 
         // PLacera elementen på rätt ställen inom <article>
         cardHeader.append(image);
