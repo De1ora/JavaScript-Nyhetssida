@@ -1,59 +1,72 @@
-document.getElementById('newsForm').addEventListener('submit', function (e) {
-    e.preventDefault(); // Förhindra att sidan laddas om
+// Ha ett eget script för sparning till egna listor!! Tips från Franklin
+// Lättare att ha ett script som hämtar in och parsar, du jobbar aldrig med localStorage direkt i din kod
+// Ett annat script som sparar till localStorage
 
-    const title = document.getElementById('title-input').value;
-    const date = document.getElementById('dateInput').value;
-    const content = document.getElementById('content-input').value;
-    const imageInput = document.getElementById('image');
-    let imageData = '';
+// När jag sparar en artikel läggs den i en lista som går till localStorage
+// Ska de tas bort måste du spara localStorage igen, men varje gång du gör en ändring som ska paras i localStorage måste du hämta, JSON parsa, hämta och skicka tillbaka med stingify 
+// Istället för att göra det i koden har jag ett script som omvandlar hela listan med objekt. 
+// Franklin
 
-    // Hämta bild som base64 (om någon valts)
-    if (imageInput.files && imageInput.files[0]) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-            imageData = e.target.result;
+// Lättare att inte använda localStorage i kod. 
+// Fick mycket fel pga av det, när han gjorde det löste sig uppgiften på egen hand. 
 
-            // Skapa artikelobjektet
-            const article = {
-                title,
-                date,
-                content,
-                image: imageData
-            };
+// HANTERAR LAGRINGEN
 
-            // Hämta tidigare artiklar, eller skapa en tom array
-            const existing = JSON.parse(localStorage.getItem('articles')) || [];
+// getArticles()
+// saveArticles()
+// addArticle()
+// removeArticle()
 
-            // Lägg till nya artikeln
-            existing.push(article);
 
-            // Spara till localStorage
-            localStorage.setItem('articles', JSON.stringify(existing));
+// Namnger localStorage nyckeln för att undvika konflikter
+const STORAGE_KEY = 'new-articles';
 
-            alert('Artikel sparad i localStorage!');
-            e.target.reset(); // Rensa formuläret
-            document.getElementById('charCount').textContent = '0';
-            document.querySelector('.file-name').textContent = 'No file chosen';
-            document.getElementById('imagePreview').innerHTML = '';
-        };
-        reader.readAsDataURL(imageInput.files[0]); // Läser bilden som Base64
-    } else {
-        // Om ingen bild är vald, spara ändå
-        const article = {
-            title,
-            date,
-            content,
-            image: null
-        };
-
-        const existing = JSON.parse(localStorage.getItem('articles')) || [];
-        existing.push(article);
-        localStorage.setItem('articles', JSON.stringify(existing));
-
-        // alert('Artikel sparad i localStorage!');
-        e.target.reset();
-        document.getElementById('charCount').textContent = '0';
-        document.querySelector('.file-name').textContent = 'No file chosen';
-        document.getElementById('imagePreview').innerHTML = '';
+// HÄMTAR alla artiklar från localStorage, eller tom array om ingen data finns!
+function getArticles() {
+    try {
+      const articlesJson = localStorage.getItem(STORAGE_KEY);
+      return articlesJson ? JSON.parse(articlesJson) : [];
+    } catch (error) {
+      console.error('Fel vid hämtning av artiklar från localStorage:', error);
+      return [];
     }
-});
+  }
+
+  // SPARAR en array med alla artiklar till localStorage
+  function saveArticles(articles) {
+    try {
+      const articlesJson = JSON.stringify(articles);
+      localStorage.setItem(STORAGE_KEY, articlesJson);
+      return true;
+    } catch (error) {
+      console.error('Fel vid sparande av artiklar till localStorage:', error);
+      return false;
+    }
+  }
+
+  // LÄGGER TILL en ny artikel till localStorage
+  function addArticle(article) {
+    try {
+      const articles = getArticles();
+      articles.push(article);
+      return saveArticles(articles);
+    } catch (error) {
+      console.error('Fel vid tillägg av ny artikel:', error);
+      return false;
+    }
+  }
+
+  // TAR BORT en artikel med ett specifikt index
+  function removeArticle(index) {
+    try {
+      const articles = getArticles();
+      if (index >= 0 && index < articles.length) {
+        articles.splice(index, 1);
+        return saveArticles(articles);
+      }
+      return false;
+    } catch (error) {
+      console.error('Fel vid borttagning av artikel:', error);
+      return false;
+    }
+  }

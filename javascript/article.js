@@ -53,8 +53,8 @@ export class Article {
         image.alt = "article_img";
         title.textContent = this.title;
         date.textContent = this.date;
-        // Truncate text description to 60 characters for card view
-        description.textContent = this.truncateText(this.description, 60);
+        // Truncate text description to 80 characters for card view
+        description.textContent = this.truncateText(this.description, 80);
 
         // PLacera elementen på rätt ställen inom <article>
         cardHeader.append(image);

@@ -23,7 +23,6 @@
 
     <script src="javascript/pages/index.js" type="module"></script> <!-- Behöver inte länka varken article.js eller main.js eftersom de importeras! -->
     <script src="javascript/navdate.js" defer></script>
-    <script src="javascript/newsform-submit.js" defer></script>
     <script src="javascript/newsform-ui.js" defer></script>
     <script src="javascript/sidebar.js" defer></script>
     <script src="javascript/storage.js" defer></script>
@@ -138,7 +137,6 @@
                         <div class="date-display">
                             Date: <span id="articleDate"></span>
                             <input type="hidden" id="dateInput" name="date">
-                            <!-- Since I have two Date elements, the ID must be unique. -->
                         </div>
                     </div>
 
@@ -162,7 +160,7 @@
                 </form>
             </div>
 
-            <!-- <div class="toast">
+            <div class="toast">
                 <div class="toast-content">
                     <i class='bx bx-check-circle'></i>
 
@@ -171,7 +169,7 @@
                         <span class="text text-2">Your good-news article has been posted!</span>
                     </div>
                 </div>
-            </div> -->
+            </div>
         </main>
 
         <footer>
