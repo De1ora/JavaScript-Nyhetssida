@@ -1,23 +1,3 @@
-// Ha ett eget script för sparning till egna listor!! Tips från Franklin
-// Lättare att ha ett script som hämtar in och parsar, du jobbar aldrig med localStorage direkt i din kod
-// Ett annat script som sparar till localStorage
-
-// När jag sparar en artikel läggs den i en lista som går till localStorage
-// Ska de tas bort måste du spara localStorage igen, men varje gång du gör en ändring som ska paras i localStorage måste du hämta, JSON parsa, hämta och skicka tillbaka med stingify 
-// Istället för att göra det i koden har jag ett script som omvandlar hela listan med objekt. 
-// Franklin
-
-// Lättare att inte använda localStorage i kod. 
-// Fick mycket fel pga av det, när han gjorde det löste sig uppgiften på egen hand. 
-
-// HANTERAR LAGRINGEN
-
-// getArticles()
-// saveArticles()
-// addArticle()
-// removeArticle()
-
-
 // Namnger localStorage nyckeln för att undvika konflikter
 const STORAGE_KEY = 'new-articles';
 
@@ -70,3 +50,5 @@ function getArticles() {
       return false;
     }
   }
+
+  export { getArticles, saveArticles, addArticle, removeArticle };

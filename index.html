@@ -21,11 +21,13 @@
     <link href="css/sections/breaking-news.css" rel="stylesheet" />
     <link href="css/sections/newsform.css" rel="stylesheet" />
 
-    <script src="javascript/pages/index.js" type="module"></script> <!-- Behöver inte länka varken article.js eller main.js eftersom de importeras! -->
+    <script type="module" src="javascript/storage.js"></script>
+    <script type="module" src="javascript/newsform-submit.js"></script>
+    <script type="module" src="javascript/pages/index.js"></script>
+    
     <script src="javascript/navdate.js" defer></script>
-    <script src="javascript/newsform-ui.js" defer></script>
+    <script src="javascript/newsform-ui.js"></script>
     <script src="javascript/sidebar.js" defer></script>
-    <script src="javascript/storage.js" defer></script>
     <script src="javascript/toast.js" defer></script>
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -136,20 +138,20 @@
                     <div class="form-group">
                         <div class="date-display">
                             Date: <span id="articleDate"></span>
-                            <input type="hidden" id="dateInput" name="date">
+                            <input type="hidden" id="dateInput">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="content-input">Content</label>
-                        <textarea id="content-input" name="content" required></textarea>
+                        <textarea id="content-input" required></textarea>
                         <div class="char-counter"><span id="charCount">0</span> characters</div>
                     </div>
 
                     <div class="form-group">
                         <label for="image">Attach Image</label>
                         <div class="file-input-container">
-                            <input type="file" id="image" name="image" accept="image/*">
+                            <input type="file" id="image" accept="image/*">
                             <label for="image" class="custom-file-button">Choose File</label>
                             <span class="file-name">No file chosen</span>
                         </div>
