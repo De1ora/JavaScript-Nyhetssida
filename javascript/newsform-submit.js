@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Lägg till händelselyssnare för när formuläret skickas (användaren trycker på submit) (vad är händelselyssnare? eventlistener? vad står (e) för?)
     // EventListener är en funktion som väntar på att en specifik händelse ska inträffa, t.ex. ett knapptryck, och utför en åtgärd när händelsen inträffar.
     newsForm.addEventListener('submit', function(e) {
-        e.preventDefault(); // Förhindra att sidan laddas om (bra varför?)
+        e.preventDefault(); // Förhindra att sidan laddas om
         // När ett formulär skickas vill webbläsaren normalt skicka datan till en server och ladda om sidan. e.preventDefault() stoppar detta beteende, så att formulärdatan kan hanteras med JavaScript istället!
 
         // Hämta referens till alla nödvändiga input-fält:
@@ -66,15 +66,15 @@ document.addEventListener('DOMContentLoaded', function() {
         const newArticle = {
             title: titleInput.value,
             date: dateInput.value,
-            content: contentInput.value,
-            image: imageData
+            description: contentInput.value,
+            imageUrl: imageData
         };
 
         // Försök att spara artikeln
         if (addArticle(newArticle)) {
             newsForm.reset();
-            imageData = ''; // Återställer bilddata
-            alert('Artikeln har sparats!')
+            imageData = ''; // Återställer 
+            alert('Artikeln har sparats!') // Byt till en toast-message
         } else {
             alert('Det uppstod ett fel när artikeln skulle sparas.');
         }

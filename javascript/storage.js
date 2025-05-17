@@ -28,6 +28,11 @@ function getArticles() {
   function addArticle(article) {
     try {
       const articles = getArticles();
+
+      if (article.content && !article.description) {
+        article.description = article.content;
+      }
+
       articles.push(article);
       return saveArticles(articles);
     } catch (error) {

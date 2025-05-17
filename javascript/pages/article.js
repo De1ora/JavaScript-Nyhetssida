@@ -1,7 +1,7 @@
 // Defines what an article looks like.
 // Creates the article view with title, date, image & text.
 
-import { newsArticles } from "../main.js";
+import { allNewsArticles } from "../main.js";
 
 const urlParams = new URLSearchParams(window.location.search);
 const articleIdParam = urlParams.get("articleId"); 
@@ -46,7 +46,7 @@ function setupArticlePage() {
             throw new Error(`Invalid article ID. "${articleIdParam}" is not a number.`);
         }
 
-        const article = newsArticles.find((all) => all.id === articleId);
+        const article = allNewsArticles.find((all) => all.id === articleId);
 
         if (!article) {
             throw new Error(`No article found with ID: ${articleId}`);

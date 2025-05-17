@@ -1,11 +1,13 @@
 // Shows an article or shows an error.
 // Displays either the full article or an error message.
 
-let ARTICLE_ID_COUNTER = 0;
+// Exporterar ARTICLE_ID_COUNTER så att main.js kan importera och använda den
+export let ARTICLE_ID_COUNTER = 0;
 
 export class Article {
-    constructor(title, date, description, imageUrl) {
-        this.id = ARTICLE_ID_COUNTER++;
+    constructor(title, date, description, imageUrl, id = null) {
+        // Om ett id skickats in används det, annars används ARTICLE_ID_COUNTER++ för att skapa ett nytt unikt ID. Kort if-sats
+        this.id = id !== null ? id : ARTICLE_ID_COUNTER++;
         this.title = title;
         this.date = date;
         this.description = description;

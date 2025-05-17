@@ -1,6 +1,6 @@
 // Innehåller sido-specifik kod
 
-import { newsArticles } from "../main.js";
+import { allNewsArticles } from "../main.js";
 
 // Hämta ut div-listan som finns i index.html
 const cardsContainerElement = document.getElementById("cardscontainer");
@@ -8,7 +8,7 @@ const cardsContainerElement = document.getElementById("cardscontainer");
 // Denna funktion kör när index.html laddas in för att dynamiskt rendera produkter
 function setupIndexPage() {
     // Fyll listorna med produkter
-    fillArticlesList(cardsContainerElement, newsArticles);
+    fillArticlesList(cardsContainerElement, allNewsArticles);
 }
 
 // Ritar ut produkter (products) inom ett visst element genom att loopa listan av produkter och skapa kort-element.

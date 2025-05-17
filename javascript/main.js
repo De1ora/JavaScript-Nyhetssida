@@ -1,6 +1,10 @@
 // Innehåller datan
 
 import { Article } from "./article.js";
+import { getArticles } from "./storage.js";
+
+// För att undvika ID-konflikter med mina hårdkodade och användarskapade artiklar skriver jag let ARTICLE_ID_COUNTER = 6;. Detta garanterar unika ID när nya artiklar skapas.
+let ARTICLE_ID_COUNTER = 6;
 
 // En hårdkodad lista av nyhetsartiklar
 export const newsArticles = [
@@ -41,3 +45,29 @@ export const newsArticles = [
         "assets/humpbackwhale2.jpg"
     )
 ];
+
+// Funktion för att konvertera localStorage data till Article objekt
+function createArticleFromStoredData(articleData) {
+    return new Article(
+        articleData.title,
+        articleData.date,
+        articleData.content || articleData.description,
+        articleData.image
+    );
+}
+
+function loadAllArticles() {
+    // Hämtar alla artiklar från localStorage och sparar dem i storedArticleData (en lokal variabel som innehåller det getArticles() retunerar)
+    const storedArticleData = getArticles();
+
+    // Mappar igenom alla JSON-objekt från localStorage datan och omvandlar dem till riktiga Article-objekt
+    const storedArticles = storedArticleData.map(data => createArticleFromStoredData(data)); 
+
+    // Uppdaterar ARTICLE_ID_COUNTER så nya artiklar får rätt ID!
+    ARTICLE_ID_COUNTER = newsArticles.length + storedArticles.length;
+
+    return [...newsArticles, ...storedArticles];
+}
+
+// Nu kan andra filer importera allNewsArticles och få tillgång till alla artiklar, både hårdkodade och användarskapade!
+export const allNewsArticles = loadAllArticles();
