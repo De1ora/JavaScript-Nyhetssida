@@ -1,4 +1,5 @@
 import { addArticle } from './storage.js';
+import { showToast } from './toast.js';
 
 // Väntar tills HTML-dokumentet är helt laddat innan JS körs
 document.addEventListener('DOMContentLoaded', function () {
@@ -77,13 +78,24 @@ document.addEventListener('DOMContentLoaded', function () {
             imageUrl: imageData
         };
 
-        // Försök att spara artikeln
         if (addArticle(newArticle)) {
             newsForm.reset();
-            imageData = ''; // Återställer 
-            alert('Artikeln har sparats!') // Byt till en toast-message
+            imageData = '';
+
+            showToast({
+                title: "Success",
+                message: "Your good-news article has been posted!",
+                iconClass: "bx-check-circle",
+                duration: 3000
+            });
+
         } else {
-            alert('Det uppstod ett fel när artikeln skulle sparas.');
+            showToast({
+                title: "Error",
+                message: "Det uppstod ett fel när artikeln skulle sparas.",
+                iconClass: "bx-error-circle",
+                duration: 3000
+            });
         }
     });
 });

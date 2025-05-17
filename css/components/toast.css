@@ -1,5 +1,5 @@
 .toast {
-    position: absolute;
+    position: fixed;
     top: 25px;
     left: 50%;
     transform: translateX(-50%);
@@ -8,6 +8,15 @@
     padding: 15px 30px 20px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     overflow: hidden;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.toast.show {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .toast .toast-content {

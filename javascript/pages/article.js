@@ -49,7 +49,7 @@ function setupArticlePage() {
         const article = allNewsArticles.find((all) => all.id === articleId);
 
         if (!article) {
-            throw new Error(`No article found with ID: ${articleId}`);
+            throw new Error(`No article could be found with the ID ${articleId}`);
         }
 
         articleViewContainer.innerHTML = "";
