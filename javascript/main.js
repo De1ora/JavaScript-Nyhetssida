@@ -52,7 +52,7 @@ function createArticleFromStoredData(articleData) {
         articleData.title,
         articleData.date,
         articleData.content || articleData.description,
-        articleData.image
+        articleData.imageUrl
     );
 }
 

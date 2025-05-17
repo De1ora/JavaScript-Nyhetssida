@@ -92,7 +92,7 @@ export class Article {
 
         imageContainer.classList.add("feature-image-container");
         featureImage.src = this.imageUrl;
-        featureImage.alt = "Feature image for " + this.title;
+        featureImage.alt = "Article image for " + this.title;
         featureImage.classList.add("feature-image");
 
         imageContainer.append(featureImage);
