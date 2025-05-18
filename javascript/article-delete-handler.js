@@ -22,6 +22,9 @@ document.addEventListener('DOMContentLoaded', function () {
         // 3. Spara tillbaka till localStorage
         localStorage.setItem('new-articles', JSON.stringify(updatedArticles));
 
+        // sessionStorage toast
+        sessionStorage.setItem("showDeleteToast", "true");
+
         // 4. Navigera tillbaka till nyhetssidan
         window.location.href = "/index.html";
     });
