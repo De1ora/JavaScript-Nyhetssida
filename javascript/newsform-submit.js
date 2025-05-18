@@ -1,6 +1,13 @@
 import { addArticle } from './storage.js';
 import { showToast } from './toast.js';
 
+function getNextArticleId() {
+    const id = localStorage.getItem("article-id-counter");
+    const nextId = id ? parseInt(id, 10) + 1 : 6;
+    localStorage.setItem("article-id-counter", nextId);
+    return nextId;
+}
+
 // Väntar tills HTML-dokumentet är helt laddat innan JS körs
 document.addEventListener('DOMContentLoaded', function () {
     // Hämta referens till formuläret med id="newsForm"
@@ -72,6 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Skapa ett artikelobjekt från formulärdata. Genom att samla våra fält (titel, datum, content, bild) i ett objekt skapar vi en logisk enhet (en artikel!)
         const newArticle = {
+            id: getNextArticleId(),
             title: titleInput.value,
             date: formattedDate,
             description: contentInput.value,
