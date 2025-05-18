@@ -7,19 +7,6 @@ const urlParams = new URLSearchParams(window.location.search);
 const articleIdParam = urlParams.get("articleId"); 
 const articleViewContainer = document.getElementById("article-view");
 
-function createBackButton() {
-    const backButtonContainer = document.createElement("div");
-    const backButton = document.createElement("a");
-
-    backButtonContainer.classList.add("back-button-container");
-    backButton.href = "/index.html";
-    backButton.classList.add("back-button");
-    backButton.textContent = "Back to News";
-
-    backButtonContainer.append(backButton);
-    return backButtonContainer;
-}
-
 function displayError(message) {
     const errorElement = document.createElement("div");
     errorElement.className = "error-message";
