@@ -132,6 +132,11 @@ export class Article {
         deleteButton.addEventListener("click", function(event) {
             event.preventDefault();
             event.stopPropagation();
+            
+            const confirmationDialog = document.getElementById('confirmation-dialog');
+            confirmationDialog.dataset.articleId = this.id; // Spara artikelns ID
+            confirmationDialog.classList.remove('hidden'); // Visa dialogrutan
+        
             console.log("Delete button clicked for article ID:", this.id);
         }.bind(this));
 
