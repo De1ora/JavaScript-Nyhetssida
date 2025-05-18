@@ -42,18 +42,6 @@ function getArticles() {
   }
 
   // TAR BORT en artikel med ett specifikt index
-  function removeArticle(index) {
-    try {
-      const articles = getArticles();
-      if (index >= 0 && index < articles.length) {
-        articles.splice(index, 1);
-        return saveArticles(articles);
-      }
-      return false;
-    } catch (error) {
-      console.error('Fel vid borttagning av artikel:', error);
-      return false;
-    }
-  }
+  // function removeArticle ...
 
-  export { getArticles, saveArticles, addArticle, removeArticle };
+  export { getArticles, saveArticles, addArticle };
