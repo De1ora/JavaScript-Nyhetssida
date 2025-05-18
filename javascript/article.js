@@ -110,19 +110,37 @@ export class Article {
         // Add image and body to the content section
         articleContent.append(imageContainer, articleBody);
 
-        // Add "Back to news" button
-        const backButtonContainer = document.createElement("div");
-        const backButton = document.createElement("a");
+        // Skapa en container för båda knapparna
+        const buttonsContainer = document.createElement("div");
+        buttonsContainer.classList.add("buttons-container");
 
-        backButtonContainer.classList.add("back-button-container");
+        // Add "Back to news" button
+        const backButton = document.createElement("a");
         backButton.href = "/index.html";
         backButton.classList.add("back-button");
         backButton.textContent = "Back to News";
 
-        backButtonContainer.append(backButton);
+        // Skapa delete-knappen
+        const deleteButton = document.createElement("button");
+        deleteButton.classList.add("delete-button");
+        deleteButton.setAttribute("data-article-id", this.id);
+        
+        const trashIcon = document.createElement("i");
+        trashIcon.className = "bx bx-trash-alt";
+        deleteButton.appendChild(trashIcon);
+        
+        deleteButton.addEventListener("click", function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            console.log("Delete button clicked for article ID:", this.id);
+        }.bind(this));
+
+        // Lägg till knapparna i deras container
+        buttonsContainer.appendChild(backButton);
+        buttonsContainer.appendChild(deleteButton);
 
         // Assemble all components
-        container.append(articleHeader, articleContent, backButtonContainer);
+        container.append(articleHeader, articleContent, buttonsContainer);
 
         return container;
     }
