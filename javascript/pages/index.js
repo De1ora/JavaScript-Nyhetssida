@@ -1,17 +1,15 @@
-// Innehåller sido-specifik kod
+// Contains page-specific code
 
 import { allNewsArticles } from "../main.js";
 import { showToast } from "../toast.js";
 
-// Hämta ut div-listan som finns i index.html
+// Retrieves the div-list found in index.html
 const cardsContainerElement = document.getElementById("cardscontainer");
 
-// Denna funktion kör när index.html laddas in för att dynamiskt rendera produkter
 function setupIndexPage() {
-    // Fyll listorna med produkter
     fillArticlesList(cardsContainerElement, allNewsArticles);
 
-    // Kollar om vi ska visa toast efter artikel-borttagning
+    // Checks if toast should be displayed
     if (sessionStorage.getItem("showDeleteToast") === "true") {
         showToast({
             title: "Success",
@@ -23,7 +21,6 @@ function setupIndexPage() {
     }
 }
 
-// Ritar ut produkter (products) inom ett visst element genom att loopa listan av produkter och skapa kort-element.
 function fillArticlesList(element, articles) {
     element.textContent = "";
 
@@ -32,5 +29,4 @@ function fillArticlesList(element, articles) {
     }
 }
 
-// Kör funktionen så fort index.html laddas in.
 setupIndexPage();

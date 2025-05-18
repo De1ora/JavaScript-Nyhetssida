@@ -8,65 +8,50 @@ function getNextArticleId() {
     return nextId;
 }
 
-// Väntar tills HTML-dokumentet är helt laddat innan JS körs
 document.addEventListener('DOMContentLoaded', function () {
-    // Hämta referens till formuläret med id="newsForm"
     const newsForm = document.getElementById('newsForm');
 
-    // Kontrollera att formuläret finns på sidan
-    if (!newsForm) {
-        console.error("Could not find a form with the ID 'newsForm'");
-        return; // Avslutar funktionen om formuläret inte finns
-    }
-
-    // Variabel för att lagra bilddata (varför placerad här?)
     let imageData = '';
 
-    // Lägg till händelselyssnare för bilduppladdning
     const imageInput = document.getElementById('image');
     if (imageInput) {
         imageInput.addEventListener('change', function (e) {
             const file = e.target.files[0];
             if (file) {
-                // Kontrollera filstorleken - max 500KB (för att undvika localStorage-begränsningar)
+                // Check file size - max 500KB (to avoid localStorage limitations)
                 if (file.size > 500000) {
-                    alert("Bilden är för stor! Vänligen välj en bild mindre än 500KB.");
-                    imageInput.value = ''; // Återställ filväljaren
-                    return;
-                }
-
-                // Kontrollera att det är en bildfil
-                if (!file.type.startsWith('image/')) {
-                    alert("Filen måste vara en bild!");
+                    alert("The image is too large. Please select an image smaller than 500KB.");
                     imageInput.value = '';
                     return;
                 }
 
-                // Läs filen som DataURL (Base64)
+                if (!file.type.startsWith('image/')) {
+                    alert("The file has to be an image.");
+                    imageInput.value = '';
+                    return;
+                }
+
+                // Read the file as DataURL (Base64)
                 const reader = new FileReader();
                 reader.onload = function (event) {
-                    imageData = event.target.result; // Spara base64-strängen
-                    // Du kan också visa en förhandsgranskning om du vill
-                    console.log("Bild har laddats");
+                    imageData = event.target.result;
+                    console.log("Image has been loaded.");
                 };
                 reader.readAsDataURL(file);
             }
         });
     }
 
-    // Lägg till händelselyssnare för när formuläret skickas (användaren trycker på submit) (vad är händelselyssnare? eventlistener? vad står (e) för?)
-    // EventListener är en funktion som väntar på att en specifik händelse ska inträffa, t.ex. ett knapptryck, och utför en åtgärd när händelsen inträffar.
     newsForm.addEventListener('submit', function (e) {
-        e.preventDefault(); // Förhindra att sidan laddas om
-        // När ett formulär skickas vill webbläsaren normalt skicka datan till en server och ladda om sidan. e.preventDefault() stoppar detta beteende, så att formulärdatan kan hanteras med JavaScript istället!
+        e.preventDefault();
 
-        // Hämta referens till alla nödvändiga input-fält:
+        // Get reference to all required input fields:
         const titleInput = document.getElementById('title-input');
-        const dateInput = document.getElementById('dateInput'); // Lite olika sätt
+        const dateInput = document.getElementById('dateInput');
         const contentInput = document.getElementById('content-input');
 
         if (!titleInput || !dateInput || !contentInput || !imageInput) {
-            alert("One or multiple ... is missing!");
+            alert("One or multiple sections are missing!");
             return;
         }
 
@@ -77,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
             day: 'numeric'
         });
 
-        // Skapa ett artikelobjekt från formulärdata. Genom att samla våra fält (titel, datum, content, bild) i ett objekt skapar vi en logisk enhet (en artikel!)
+        // Create an article object from the form data. By collecting our fields (title, date, content, image) into one object, we create a logical entity (an article!)
         const newArticle = {
             id: getNextArticleId(),
             title: titleInput.value,
@@ -100,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             showToast({
                 title: "Error",
-                message: "Det uppstod ett fel när artikeln skulle sparas.",
+                message: "An error occurred while saving the article.",
                 iconClass: "bx-error-circle",
                 duration: 3000
             });

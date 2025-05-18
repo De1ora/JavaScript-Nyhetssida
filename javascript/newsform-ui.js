@@ -14,10 +14,10 @@ function initializeNewsForm() {
     document.getElementById('dateInput').value = now.toISOString();
 
     // Character counter 
-    const contentTextarea = document.getElementById('content-input'); 
+    const contentTextarea = document.getElementById('content-input');
     const charCount = document.getElementById('charCount');
 
-    if (contentTextarea && charCount) { 
+    if (contentTextarea && charCount) {
         contentTextarea.addEventListener('input', function () {
             const count = this.value.length;
             charCount.textContent = count;
@@ -49,23 +49,22 @@ function initializeNewsForm() {
     }
 
     // Custom file input (since I am overwriting the default)
-const fileInput = document.getElementById('image');
-const fileNameDisplay = document.querySelector('.file-name');
+    const fileInput = document.getElementById('image');
+    const fileNameDisplay = document.querySelector('.file-name');
 
-if (fileInput && fileNameDisplay) {
-    fileInput.addEventListener('change', function() {
-        if (this.files && this.files[0]) {
-            fileNameDisplay.textContent = this.files[0].name;
-        } else {
-            fileNameDisplay.textContent = 'No file chosen';
-        }
-    });
-}
+    if (fileInput && fileNameDisplay) {
+        fileInput.addEventListener('change', function () {
+            if (this.files && this.files[0]) {
+                fileNameDisplay.textContent = this.files[0].name;
+            } else {
+                fileNameDisplay.textContent = 'No file chosen';
+            }
+        });
+    }
 }
 
 // Event listener to initialize the form when the page loads
 document.addEventListener('DOMContentLoaded', function () {
-    // Check if the news form exists on this page before initializing
     if (document.getElementById('newsForm')) {
         initializeNewsForm();
     }

@@ -4,7 +4,7 @@
 import { allNewsArticles } from "../main.js";
 
 const urlParams = new URLSearchParams(window.location.search);
-const articleIdParam = urlParams.get("articleId"); 
+const articleIdParam = urlParams.get("articleId");
 const articleViewContainer = document.getElementById("article-view");
 
 function displayError(message) {

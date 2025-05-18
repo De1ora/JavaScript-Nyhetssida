@@ -3,29 +3,28 @@ document.addEventListener('DOMContentLoaded', function () {
     const confirmYesButton = document.getElementById('confirm-yes');
     const confirmNoButton = document.getElementById('confirm-no');
 
-    // Klick på "No" => Stäng dialogrutan
+    // If No => close dialog
     confirmNoButton.addEventListener('click', function () {
         confirmationDialog.classList.add('hidden');
     });
 
-    // Klick på "Yes" => Ta bort artikel från localStorage och navigera bort
+    // If Yes => Remove article from localStorage and navigate to index.html
     confirmYesButton.addEventListener('click', function () {
         const articleId = confirmationDialog.dataset.articleId;
         if (!articleId) return;
 
-        // 1. Hämta alla artiklar från storage
+        // 1. Get all articles from storage
         const articles = JSON.parse(localStorage.getItem('new-articles')) || [];
 
-        // 2. Filtrera bort artikeln med rätt ID
+        // 2. Filter out the article with the correct ID
         const updatedArticles = articles.filter(article => article.id != articleId);
 
-        // 3. Spara tillbaka till localStorage
+        // 3. Save back to localStorage
         localStorage.setItem('new-articles', JSON.stringify(updatedArticles));
 
         // sessionStorage toast
         sessionStorage.setItem("showDeleteToast", "true");
 
-        // 4. Navigera tillbaka till nyhetssidan
         window.location.href = "/index.html";
     });
 });

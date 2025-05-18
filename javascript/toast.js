@@ -15,7 +15,6 @@ export function showToast({
 
     toast.classList.add("show");
 
-    // Göm toasten efter duration
     setTimeout(() => {
         toast.classList.remove("show");
     }, duration);

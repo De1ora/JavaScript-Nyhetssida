@@ -1,12 +1,12 @@
-// Innehåller datan
+// Contains data
 
 import { Article } from "./article.js";
 import { getArticles } from "./storage.js";
 
-// För att undvika ID-konflikter med mina hårdkodade och användarskapade artiklar skriver jag let ARTICLE_ID_COUNTER = 6;. Detta garanterar unika ID när nya artiklar skapas.
+// To avoid ID conflicts with my hardcoded and user-created articles, I write let ARTICLE_ID_COUNTER = 6;. This ensures unique IDs when new articles are created.
 let ARTICLE_ID_COUNTER = 6;
 
-// En hårdkodad lista av nyhetsartiklar
+// Hardcoded articles list 
 export const newsArticles = [
     new Article(
         "Leading with purpose: Shaping the future in Sierra Leone",
@@ -46,7 +46,7 @@ export const newsArticles = [
     )
 ];
 
-// Funktion för att konvertera localStorage data till Article objekt
+// Function to convert localStorage data to Article object
 function createArticleFromStoredData(articleData) {
     return new Article(
         articleData.title,
@@ -57,17 +57,16 @@ function createArticleFromStoredData(articleData) {
 }
 
 function loadAllArticles() {
-    // Hämtar alla artiklar från localStorage och sparar dem i storedArticleData (en lokal variabel som innehåller det getArticles() retunerar)
+    // Retrieves all articles from localStorage and saves them in storedArticleData (a local variable containing what getArticles() returns)
     const storedArticleData = getArticles();
 
-    // Mappar igenom alla JSON-objekt från localStorage datan och omvandlar dem till riktiga Article-objekt
-    const storedArticles = storedArticleData.map(data => createArticleFromStoredData(data)); 
+    // Maps through all JSON objects from the localStorage data and converts them into real Article objects
+    const storedArticles = storedArticleData.map(data => createArticleFromStoredData(data));
 
-    // Uppdaterar ARTICLE_ID_COUNTER så nya artiklar får rätt ID!
+    // Updating ARTICLE_ID_COUNTER so new articles get the correct ID!
     ARTICLE_ID_COUNTER = newsArticles.length + storedArticles.length;
 
     return [...newsArticles, ...storedArticles];
 }
 
-// Nu kan andra filer importera allNewsArticles och få tillgång till alla artiklar, både hårdkodade och användarskapade!
 export const allNewsArticles = loadAllArticles();

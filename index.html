@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html lang="eng">
 
-<!-- Att fixa:
- Toast meddelanden! 
- Det går att ladda upp en bild som är större än 500kb även om man får en varnings-alert. Stoppa det från att vara möjligt?
- Användarskapad artikel publiceras, men för att kunna se den måste man refresha sidan. Vanligt problem? Ladda om sidan med kod?
+<!-- Suggestions for improvement:
+
+ 1. The article ID counter continues to increment even when articles are deleted,
+   which creates gaps in the ID sequence.
+   This doesn't break functionality but could lead to confusion or issues with deletion
+   if not handled properly.
+
+   2. It is currently possible to upload an image larger than 500kb, even though a warning alert appears.
+   Consider preventing the upload entirely if the file exceeds the size limit in the future!
+
+   3. When a user-created article is published, it does not immediately appear on the page.
+   A manual page refresh is required to see the new content.
+   Consider programmatically refreshing or re-rendering the article list after creation.
+
  -->
 
 <head>
@@ -12,7 +22,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Now & Next</title>
 
-    <!-- Browser tab icon -->
     <link rel="icon" href="assets/NOWNEXT.png" type="img" />
 
     <link href="css/base/input.css" rel="stylesheet" />
@@ -129,7 +138,6 @@
 
         <main>
             <div class="cards-container container flex" id="cardscontainer">
-                <!-- News articles will be dynamically loaded here -->
             </div>
 
             <div class="news-form-container">

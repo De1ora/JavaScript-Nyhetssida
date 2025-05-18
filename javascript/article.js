@@ -1,12 +1,10 @@
 // Shows an article or shows an error.
 // Displays either the full article or an error message.
 
-// Exporterar ARTICLE_ID_COUNTER så att main.js kan importera och använda den
 export let ARTICLE_ID_COUNTER = 0;
 
 export class Article {
     constructor(title, date, description, imageUrl, id = null) {
-        // Om ett id skickats in används det, annars används ARTICLE_ID_COUNTER++ för att skapa ett nytt unikt ID. Kort if-sats
         this.id = id !== null ? id : ARTICLE_ID_COUNTER++;
         this.title = title;
         this.date = date;
@@ -21,10 +19,8 @@ export class Article {
         return text.substring(0, maxLength) + "...";
     }
 
-    // Vi skapar en <article> för produkten och retunerar elementet 
-    // Detta ska visas på huvudsidan och även på produktsidan
     createCardElement() {
-        // Skapa alla element som ska visas inom <article> produkten
+        // Create all elements to be displayed within the article
         let link = document.createElement("a");
         let card = document.createElement("div");
         let cardHeader = document.createElement("div");
@@ -34,23 +30,19 @@ export class Article {
         let date = document.createElement("h6");
         let description = document.createElement("p");
 
-        // När vi trycker på produkten ska vi skickas till en separat artikel-sida!
-        // Vi skickar med information om vilken artikel det är genom id:t
         link.href = "/article.html?articleId=" + this.id;
 
-        // Applicera på de element som behöver det
         card.classList.add("card");
         cardHeader.classList.add("card-header");
         cardContent.classList.add("card-content");
         date.classList.add("news-source");
         description.classList.add("news-description");
 
-        // Sätt ID'n för att matcha min originella struktur
+        // Set the ID to match my original structure
         title.id = "news-title";
         date.id = "news-source";
         description.id = "news-description";
 
-        // Fixa med styling och innehåll på elementen 
         image.src = this.imageUrl;
         image.alt = "article_img";
         title.textContent = this.title;
@@ -58,7 +50,6 @@ export class Article {
         // Truncate text description to 80 characters for card view
         description.textContent = this.truncateText(this.description, 80);
 
-        // PLacera elementen på rätt ställen inom <article>
         cardHeader.append(image);
         cardContent.append(title, date, description);
         card.append(cardHeader, cardContent);
@@ -97,7 +88,6 @@ export class Article {
 
         imageContainer.append(featureImage);
 
-        // Create article body text
         const articleBody = document.createElement("div");
         const articleDescription = document.createElement("p");
 
@@ -110,7 +100,7 @@ export class Article {
         // Add image and body to the content section
         articleContent.append(imageContainer, articleBody);
 
-        // Skapa en container för båda knapparna
+        // Create a container for both buttons
         const buttonsContainer = document.createElement("div");
         buttonsContainer.classList.add("buttons-container");
 
@@ -120,27 +110,27 @@ export class Article {
         backButton.classList.add("back-button");
         backButton.textContent = "Back to News";
 
-        // Skapa delete-knappen
+        // Create delete-button
         const deleteButton = document.createElement("button");
         deleteButton.classList.add("delete-button");
         deleteButton.setAttribute("data-article-id", this.id);
-        
+
         const trashIcon = document.createElement("i");
         trashIcon.className = "bx bx-trash-alt";
         deleteButton.appendChild(trashIcon);
-        
-        deleteButton.addEventListener("click", function(event) {
+
+        deleteButton.addEventListener("click", function (event) {
             event.preventDefault();
             event.stopPropagation();
-            
+
             const confirmationDialog = document.getElementById('confirmation-dialog');
-            confirmationDialog.dataset.articleId = this.id; // Spara artikelns ID
-            confirmationDialog.classList.remove('hidden'); // Visa dialogrutan
-        
+            confirmationDialog.dataset.articleId = this.id;
+            confirmationDialog.classList.remove('hidden'); // Show dialog
+
             console.log("Delete button clicked for article ID:", this.id);
         }.bind(this));
 
-        // Lägg till knapparna i deras container
+        // Add the buttons to their container
         buttonsContainer.appendChild(backButton);
         buttonsContainer.appendChild(deleteButton);
 
